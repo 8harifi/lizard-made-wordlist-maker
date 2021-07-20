@@ -23,11 +23,12 @@ usage:
     
     Default: --small-needed --number-needed --capital --length-at-least 0 --length-at-most 100 -o wordlist_output.txt
 
-install:
-		git clone https://github.com/the-liz4rd/lizard-made-wordlist-maker.git
-		cd lizard-made-wordlist-maker/
-		python3 setup.py install
-		wordlist_maker --help # to make sure that the module is installed
+installation:
+
+    git clone https://github.com/the-liz4rd/lizard-made-wordlist-maker.git    
+    cd lizard-made-wordlist-maker/
+    python3 setup.py install
+    wordlist_maker --help # to make sure that the module is installed
 
 this tool is very fast and also very easy to use
 and it will also remove any useless word that you don't need, for instance if you need passowrds for a dictionary attack on a wifi hanshake, you won't get very short or very long passwords, or any password only including numbers or small letters will be removed :) you're welcome
