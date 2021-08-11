@@ -16,7 +16,7 @@ def banner():
 	print("██║░░░░░██║██╔══╝░░██╔══██║██╔══██╗██║░░██║░░░░╚═══██╗  ░░████╔═████║░██║░░░░░██║╚██╔╝██║")
 	print("███████╗██║███████╗██║░░██║██║░░██║██████╔╝░░░██████╔╝  ░░╚██╔╝░╚██╔╝░███████╗██║░╚═╝░██║")
 	print("╚══════╝╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░░░░╚═════╝░  ░░░╚═╝░░░╚═╝░░╚══════╝╚═╝░░░░░╚═╝")
-	print("email: 0liver.7he.1izard@gmail.com\ngithub: will_complete_this_later")
+	print("email: 0liver.7he.1izard@gmail.com\ngithub: https://github.com/the-liz4rd")
 
 
 
@@ -27,23 +27,31 @@ def usage():
 	print("""
 		Default: --small-needed --number-needed --capital --length-at-least 0 --length-at-most 100 -o wordlist_output.txt
 		
-		--wpa              -w   Password list for WPA and WPA2 wifis, most have both capital and small letters
+		--wpa				-w	Password list for WPA and WPA2 wifis, most have both capital and small letters
 
-		--capital          -c   Might include capital letters
-		--no-capital            Without any capital letters
+		--capital			-c	Might include capital letters
+		--no-capital			Without any capital letters
 		--need-capital          Must include capital letters
-		--small            -s   Might include small letters
+		--small				-s  Might include small letters
 		--no-small              Without any small letters
 		--need-small            Must include small letters
-		--number           -n   Might include numbers
+		--number			-n  Might include numbers
 		--no-number             Without any numbers
 		--need-number           Must include numbers
-		--input            -i   Path to a File including raw words
-		--output           -o   Path to the output file
+
+		--input				-i  Path to a File including raw words
+		--output			-o  Path to the output file
+
 		--length-at-least       Least allowed length for the passwords
 		--length-at-most        Most allowed length for the passwords
 
+		--best-performance	-b	best performance mode provides less words but with less probability of a successful attack
+		--most-probale		-m	most probable mode provides more words than best performance but with more probability of a successful attack
 		""")
+
+
+
+
 
 
 def write_output (file_name, final_wordlist):
@@ -84,6 +92,8 @@ def main():
 		usage()
 		exit()
 
+	best_performance = False
+	most_probable = False
 
 	for arg in arg_list:
 		n=n+1
@@ -135,6 +145,10 @@ def main():
 			elif arg == "-h" or arg == "--help":
 				usage()
 				exit()
+			elif arg == "-b" or arg == "--best-performance":
+				best_performance = True
+			elif arg == "-m" or arg == "--most-probable":
+				most_probable = True
 			else :
 				print("[!] no such argument")
 				banner()
@@ -223,32 +237,25 @@ def main():
 	print("[*] Generating the word list")
 
 	wordlist = []
-	"""
-	with open("numbers", "w") as File:
-		for sth in numbers:
-			File.write(sth+"\n")
-
-	with open("lowers", "w") as File:
-		for sth in lowers:
-			File.write(sth+"\n")
-
-	with open("uppers", "w") as File:
-		for sth in uppers:
-			File.write(sth+"\n")
-
-	with open("capitals", "w") as File:
-		for sth in capitals:
-			File.write(sth+"\n")
-	"""
 
 
 	all_words = uppers + lowers + capitals + numbers
 
 	all_words.append("")
-	for word1 in all_words:
-		for word2 in all_words:
-			for word3 in all_words:
-				wordlist.append(word1+word2+word3)
+	if most_probable:
+		for word1 in all_words:
+			for word2 in all_words:
+				for word3 in all_words:
+					wordlist.append(word1+word2+word3)
+	elif best_performance:
+		for word1 in all_words:
+			for word2 in all_words:
+				wordlist.append(word1+word2)
+	else:
+		for word1 in all_words:
+			for word2 in all_words:
+				for word3 in all_words:
+					wordlist.append(word1+word2+word3)
 
 
 
