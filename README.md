@@ -1,4 +1,4 @@
-# lizard-made-wordlist-maker
+# wordlist_maker
 		
 usage:
 		
@@ -28,8 +28,8 @@ usage:
 
 installation:
 
-    git clone https://github.com/the-liz4rd/lizard-made-wordlist-maker.git    
-    cd lizard-made-wordlist-maker/
+    git clone https://github.com/8harifi/wordlist_maker.git    
+    cd wordlist_maker/
     python3 setup.py install
     wordlist_maker --help # to make sure that the module is installed
 
