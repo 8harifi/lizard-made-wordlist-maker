@@ -46,7 +46,7 @@ def usage():
 		--length-at-most        Most allowed length for the passwords
 
 		--best-performance	-b	best performance mode provides less words but with less probability of a successful attack
-		--most-probale		-m	most probable mode provides more words than best performance but with more probability of a successful attack
+		--most-probable		-m	most probable mode provides more words than best performance but with more probability of a successful attack
 		""")
 
 
@@ -150,7 +150,7 @@ def main():
 			elif arg == "-m" or arg == "--most-probable":
 				most_probable = True
 			else :
-				print("[!] no such argument")
+				print("[!] no such argument: {}".format(arg))
 				banner()
 				exit()
 		elif arg == output_file:
