@@ -1,37 +1,104 @@
+I can help clean up and clarify your README! Here's an improved version:
+
+---
+
 # wordlist_maker
-		
-usage:
-		
-		--wpa				-w	Password list for WPA and WPA2 wifis, most have both capital and small letters
 
-		--capital			-c	Might include capital letters
-		--no-capital			Without any capital letters
-		--need-capital          Must include capital letters
-		--small				-s  Might include small letters
-		--no-small              Without any small letters
-		--need-small            Must include small letters
-		--number			-n  Might include numbers
-		--no-number             Without any numbers
-		--need-number           Must include numbers
+## Usage
 
-		--input				-i  Path to a File including raw words
-		--output			-o  Path to the output file
+Generate custom wordlists with various configurations for use in dictionary attacks, including WPA and WPA2 WiFi passwords.
 
-		--length-at-least       Least allowed length for the passwords
-		--length-at-most        Most allowed length for the passwords
+### Options:
 
-		--best-performance	-b	best performance mode provides less words but with less probability of a successful attack
-		--most-probale		-m	most probable mode provides more words than best performance but with more probability of a successful attack
-    
-    
-    Default: --small-needed --number-needed --capital --length-at-least 0 --length-at-most 100 -o wordlist_output.txt
+- `--wpa`, `-w`  
+  Generate a password list for WPA and WPA2 WiFi networks (includes both capital and lowercase letters by default).
 
-installation:
+- `--capital`, `-c`  
+  May include capital letters.
 
-    git clone https://github.com/8harifi/wordlist_maker.git    
-    cd wordlist_maker/
-    python3 setup.py install
-    wordlist_maker --help # to make sure that the module is installed
+- `--no-capital`  
+  Excludes capital letters.
 
-this tool is very fast and also very easy to use
-and it will also remove any useless word that you don't need, for instance if you need passowrds for a dictionary attack on a wifi hanshake, you won't get very short or very long passwords, or any password only including numbers or small letters will be removed :) you're welcome
+- `--need-capital`  
+  Requires capital letters.
+
+- `--small`, `-s`  
+  May include lowercase letters.
+
+- `--no-small`  
+  Excludes lowercase letters.
+
+- `--need-small`  
+  Requires lowercase letters.
+
+- `--number`, `-n`  
+  May include numbers.
+
+- `--no-number`  
+  Excludes numbers.
+
+- `--need-number`  
+  Requires numbers.
+
+- `--input`, `-i`  
+  Path to a file containing raw words.
+
+- `--output`, `-o`  
+  Path to the output file.
+
+- `--length-at-least`  
+  Specifies the minimum allowed password length.
+
+- `--length-at-most`  
+  Specifies the maximum allowed password length.
+
+- `--best-performance`, `-b`  
+  Best performance mode; provides fewer words with a lower probability of a successful attack.
+
+- `--most-probable`, `-m`  
+  Most probable mode; generates more words with a higher probability of a successful attack.
+
+### Default Configuration:
+```
+--small-needed --number-needed --capital --length-at-least 0 --length-at-most 100 -o wordlist_output.txt
+```
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/8harifi/wordlist_maker.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd wordlist_maker/
+   ```
+
+3. Install the module:
+   ```bash
+   python3 setup.py install
+   ```
+
+4. Verify installation:
+   ```bash
+   wordlist_maker --help
+   ```
+
+---
+
+## Features:
+
+- **Speed:** This tool is optimized for fast performance.
+- **Customization:** You can generate wordlists with specific rules (e.g., length, characters, and types of characters).
+- **Exclusion of Unwanted Words:** It will automatically remove passwords that don't meet your specified criteria, such as those with only numbers or without any capital letters.
+
+This tool is ideal for dictionary-based WiFi handshake attacks, ensuring that only relevant password candidates are included in your wordlist.
+
+---
+
+Is there anything you'd like to clarify or change further?
+## License
+
+[MIT](https://github.com/8harifi/wordlist_maker/blob/main/LICENSE)
+
