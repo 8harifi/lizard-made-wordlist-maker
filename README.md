@@ -1,4 +1,4 @@
-I can help clean up and clarify your README! Here's an improved version:
+
 
 ---
 
@@ -97,7 +97,6 @@ This tool is ideal for dictionary-based WiFi handshake attacks, ensuring that on
 
 ---
 
-Is there anything you'd like to clarify or change further?
 ## License
 
 [MIT](https://github.com/8harifi/wordlist_maker/blob/main/LICENSE)
